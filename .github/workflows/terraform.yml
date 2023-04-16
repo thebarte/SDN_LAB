@@ -5,6 +5,8 @@ on:
     branches:
       - main
   pull_request:
+    branches:
+      - main
 
 jobs:
   terraform:
@@ -29,6 +31,8 @@ jobs:
       - name: Terraform Init
         id: init
         run: terraform init
+        env:
+         TF_WORKSPACE: "production"
       
       - name: Terraform Validate
         id: validate
