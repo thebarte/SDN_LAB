@@ -3,10 +3,10 @@ name: "Terraform"
 on:
   push:
     branches:
-      - env
+      - development
   pull_request:
     branches:
-      - env
+      - development
 
 jobs:
   terraform:
