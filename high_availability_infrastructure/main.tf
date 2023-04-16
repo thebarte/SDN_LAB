@@ -8,9 +8,9 @@ resource "aws_launch_template" "lt1" {
 
 resource "aws_autoscaling_group" "asg1" {
   name = "my-asg1"
-  desired_capacity = 3
+  desired_capacity = 2
   min_size = 2
-  max_size = 3
+  max_size = 2
   launch_template {
     id = aws_launch_template.lt1.id
   }
