@@ -1,9 +1,10 @@
 terraform {
-  cloud {
+  backend "remote" {
+    hostname     = "app.terraform.io"
     organization = "Terraform_Project_TELE36058"
 
     workspaces {
-      name = "SDN_"
+      prefix = "SDN_"
     }
   }
 }
