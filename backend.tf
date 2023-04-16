@@ -4,7 +4,7 @@ terraform {
     organization = "Terraform_Project_TELE36058"
 
     workspaces {
-      prefix = "SDN_"
+      prefix = "SDN"
     }
   }
 }
