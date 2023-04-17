@@ -1,22 +1,3 @@
-terraform {
-  required_providers {
-    aws = {
-      source = "hashicorp/aws"
-    }
-    random = {
-      source = "hashicorp/random"
-    }
-  }
-
-  cloud {
-    organization = "Terraform_Project_TELE36058"
-
-    workspaces {
-      name = "SDNprod"
-    }
-  }
-}
-
 module "vpc" {
   source   = "./vpc"
   vpc_cidr = "192.168.0.0/16"
@@ -39,7 +20,7 @@ module "security_group" {
 module "high_availability_infrastructure" {
   source            = "./high_availability_infrastructure"
   subnets           = module.vpc.subnet_ids
-  ami_id            = "ami-0ee1b569239bf6c3e" # Replace with your custom AMI ID
+  ami_id            = "ami-0ee1b569239bf6c3e" 
   vpc_id            = module.vpc.vpc_id
   security_group_id = module.security_group.security_group_id
 }
