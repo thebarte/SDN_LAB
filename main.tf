@@ -16,6 +16,7 @@ module "security_group" {
   source = "./security_group"
   vpc_id = module.vpc.vpc_id
 }
+
 module "high_availability_infrastructure" {
   source = "./high_availability_infrastructure"
   subnets = module.vpc.subnet_ids
