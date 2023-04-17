@@ -1,3 +1,22 @@
+terraform {
+  required_providers {
+    aws = {
+      source = "hashicorp/aws"
+    }
+    random = {
+      source = "hashicorp/random"
+    }
+  }
+
+  cloud {
+    organization = "Terraform_Project_TELE36058"
+
+    workspaces {
+      name = "SDNprod"
+    }
+  }
+}
+
 module "vpc" {
   source   = "./vpc"
   vpc_cidr = "192.168.0.0/16"
