@@ -32,7 +32,11 @@ jobs:
         id: init
         run: terraform init
         env:
-         TF_WORKSPACE: "production"
+         TF_WORKSPACE: "prod"
+      
+      - name: Terraform Workspace
+        id: workspace
+        run: terraform workspace select prod
       
       - name: Terraform Validate
         id: validate
