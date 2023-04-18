@@ -34,10 +34,6 @@ jobs:
         env:
          TF_WORKSPACE: "prod"
       
-      - name: Terraform Workspace
-        id: workspace
-        run: terraform workspace select prod
-      
       - name: Terraform Validate
         id: validate
         run: terraform validate -no-color
